@@ -1,4 +1,4 @@
-global using TicketsCia.Models;
+﻿global using TicketsCia.Models;
 using Microsoft.EntityFrameworkCore;
 using TicketsCia.API.Database;
 using TicketsCia.API.Repositories;

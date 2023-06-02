@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TicketsCia.API.Database;
 
@@ -11,9 +12,11 @@ using TicketsCia.API.Database;
 namespace TicketsCia.API.Migrations
 {
     [DbContext(typeof(TicketsCiaContext))]
-    partial class TicketsCiaContextModelSnapshot : ModelSnapshot
+    [Migration("20230602155829_AdicionandoUsuario")]
+    partial class AdicionandoUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

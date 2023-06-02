@@ -18,6 +18,8 @@ builder.Services.AddDbContext<TicketsCiaContext>(
 );
 
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ILocalRepository, LocalRepository>();
 #endregion
 
 var app = builder.Build();

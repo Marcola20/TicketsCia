@@ -31,9 +31,8 @@ namespace TicketsCia.API.Controllers
         {
             var ticket = _objTicketRepository.Get(intIdIngresso);
             if (ticket == null)
-            {
                 return NotFound("Ingresso não encontrado!");
-            }
+            
             return Ok(ticket);
         }
 

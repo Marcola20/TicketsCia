@@ -6,7 +6,7 @@ namespace TicketsCia.API.Controllers
 {
     [Route("api/[controller]/")]
     [ApiController]
-    public class LocaisController : Controller
+    public class LocaisController : ControllerBase
     {
         private readonly ILocalRepository _objLocalRepository;
 

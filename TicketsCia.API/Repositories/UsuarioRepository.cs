@@ -1,4 +1,5 @@
-﻿using TicketsCia.API.Database;
+﻿using System.Data;
+using TicketsCia.API.Database;
 using TicketsCia.Models;
 
 namespace TicketsCia.API.Repositories

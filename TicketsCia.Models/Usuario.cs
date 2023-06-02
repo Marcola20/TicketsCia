@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,5 +27,6 @@ namespace TicketsCia.Models
         public string Celular { get; set; } = null!;
 
         public Endereco? Endereco { get; set; }
+
     }
 }

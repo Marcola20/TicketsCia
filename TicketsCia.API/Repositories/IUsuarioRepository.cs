@@ -1,4 +1,6 @@
-﻿namespace TicketsCia.API.Repositories
+﻿using System.Data;
+
+namespace TicketsCia.API.Repositories
 {
     public interface IUsuarioRepository
     {

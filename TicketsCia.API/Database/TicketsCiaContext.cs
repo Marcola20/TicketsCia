@@ -17,7 +17,7 @@ namespace TicketsCia.API.Database
 
         public DbSet<Usuario> Usuarios{ get; set; }
 
-        public DbSet<Endereco> Endereco { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
 
         #region Conexão sem distinção de ambientes de execução
         /*

@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace TicketsCia.Models
 {
-    public class Local
+    public class Endereco
     {
-        [Key] public int LocalId { get; set; }
-        [ForeignKey("IngressoId")] public int IngressoId { get; set; }
+        [Key] public int EnderecoId { get; set; }
+        [ForeignKey("UsuarioId")] public int UsuarioId { get; set; }
         public string Logradouro { get; set; } = null!;
         public string? Complemento { get; set; }
         public int Numero { get; set; }
         public string Cidade { get; set; } = null!;
         public string Bairro { get; set; } = null!;
-        public string UF { get; set; } = null!;   
+        public string UF { get; set; } = null!;
         public string CEP { get; set; } = null!;
     }
 }

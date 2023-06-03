@@ -15,6 +15,10 @@ namespace TicketsCia.API.Database
 
         public DbSet<Categoria> Categorias { get; set; }
 
+        public DbSet<Usuario> Usuarios{ get; set; }
+
+        public DbSet<Endereco> Enderecos { get; set; }
+
         #region Conexão sem distinção de ambientes de execução
         /*
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

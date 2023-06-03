@@ -1,4 +1,4 @@
-global using TicketsCia.Models;
+﻿global using TicketsCia.Models;
 using Microsoft.EntityFrameworkCore;
 using TicketsCia.API.Database;
 using TicketsCia.API.Repositories;
@@ -18,6 +18,8 @@ builder.Services.AddDbContext<TicketsCiaContext>(
 );
 
 builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+builder.Services.AddScoped<ICategoriaRepository, CategoriaRepository>();
+builder.Services.AddScoped<ILocalRepository, LocalRepository>();
 #endregion
 
 var app = builder.Build();

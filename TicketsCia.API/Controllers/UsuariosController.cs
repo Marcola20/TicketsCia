@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using TicketsCia.API.Repositories;
 using TicketsCia.Models;
 
 namespace TicketsCia.API.Controllers
 {
+    [EnableCors]
     [Route("api/[controller]/")]
     [ApiController]
     public class UsuariosController : ControllerBase

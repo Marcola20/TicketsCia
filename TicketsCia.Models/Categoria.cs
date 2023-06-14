@@ -9,7 +9,7 @@ namespace TicketsCia.Models
     public class Categoria
     {
         public int CategoriaId { get; set; }
-        public string Nome { get; set; } = null!;
-        public string Tipo { get; set; } = null!;
+        public string NomeCategoria { get; set; } = null!;
+        public string TipoCategoria { get; set; } = null!;
     }
 }

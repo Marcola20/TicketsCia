@@ -26,7 +26,5 @@ namespace TicketsCia.Models
 
         public string Celular { get; set; } = null!;
 
-        public Endereco Endereco { get; set; } = null!;
-
     }
 }

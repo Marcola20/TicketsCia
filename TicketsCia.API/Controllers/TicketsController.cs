@@ -6,6 +6,7 @@ using TicketsCia.Models;
 
 namespace TicketsCia.API.Controllers
 {
+    //[DisableCors]
     [Route("api/[controller]/")]
     [ApiController]
     public class TicketsController : ControllerBase

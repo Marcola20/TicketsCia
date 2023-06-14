@@ -11,7 +11,7 @@ using TicketsCia.API.Database;
 namespace TicketsCia.API.Migrations
 {
     [DbContext(typeof(TicketsCiaContext))]
-    [Migration("20230602211151_CriandoBanco")]
+    [Migration("20230613182806_CriandoBanco")]
     partial class CriandoBanco
     {
         /// <inheritdoc />
@@ -32,11 +32,11 @@ namespace TicketsCia.API.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoriaId"));
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("NomeCategoria")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Tipo")
+                    b.Property<string>("TipoCategoria")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -84,9 +84,6 @@ namespace TicketsCia.API.Migrations
 
                     b.HasKey("EnderecoId");
 
-                    b.HasIndex("UsuarioId")
-                        .IsUnique();
-
                     b.ToTable("Enderecos");
                 });
 
@@ -112,9 +109,6 @@ namespace TicketsCia.API.Migrations
 
                     b.Property<string>("Complemento")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IngressoId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Logradouro")
                         .IsRequired()
@@ -157,10 +151,9 @@ namespace TicketsCia.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
-
                     b.HasKey("IngressoId");
+
+                    b.HasIndex("CategoriaId");
 
                     b.HasIndex("LocalId");
 
@@ -207,30 +200,23 @@ namespace TicketsCia.API.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("TicketsCia.Models.Endereco", b =>
-                {
-                    b.HasOne("TicketsCia.Models.Usuario", null)
-                        .WithOne("Endereco")
-                        .HasForeignKey("TicketsCia.Models.Endereco", "UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("TicketsCia.Models.Ticket", b =>
                 {
+                    b.HasOne("TicketsCia.Models.Categoria", "Categoria")
+                        .WithMany()
+                        .HasForeignKey("CategoriaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("TicketsCia.Models.Local", "Local")
                         .WithMany()
                         .HasForeignKey("LocalId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Local");
-                });
+                    b.Navigation("Categoria");
 
-            modelBuilder.Entity("TicketsCia.Models.Usuario", b =>
-                {
-                    b.Navigation("Endereco")
-                        .IsRequired();
+                    b.Navigation("Local");
                 });
 #pragma warning restore 612, 618
         }
